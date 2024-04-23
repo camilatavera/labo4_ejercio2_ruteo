@@ -1,0 +1,22 @@
+<section class="main" *ngIf="!sesionIniciada">
+    <div class="input">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="text" [(ngModel)]="nombre">
+    </div>
+    <div class="input">
+        <label for="clave">Clave</label>
+        <input id="clave" type="password" [(ngModel)]="clave">
+    </div>
+    <div class="input">
+        <button (click)="iniciarSesion()">Registrarse</button>
+    </div>
+</section>
+<section class="main" *ngIf="sesionIniciada">
+    <h1>Se ha registrado el usuario como {{ nombre }}</h1>
+    <div class="input">
+        <button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</section>
+<section class="main" *ngIf="userExists">
+    <p>El usuario {{ nombre }} ya existe. No se puede registrar nuevamente</p>
+</section>

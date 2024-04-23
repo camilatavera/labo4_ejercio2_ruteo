@@ -1,0 +1,22 @@
+<section class="main" *ngIf="!sesionIniciada">
+    <div class="input">
+    </div>
+    <div class="input">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" type="nombre" [(ngModel)]="nombre">
+    </div>
+
+    <div class="input">
+        <label for="clave">Clave</label>
+        <input id="clave" type="password" [(ngModel)]="clave">
+    </div>
+    <div class="input">
+        <button (click)="iniciarSesion()">Iniciar Sesión</button>
+    </div>
+</section>
+<section class="main" *ngIf="sesionIniciada">
+    <h1>Ya ha iniciado sesión como {{ nombre }}</h1>
+    <div class="input">
+        <button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+</section>
